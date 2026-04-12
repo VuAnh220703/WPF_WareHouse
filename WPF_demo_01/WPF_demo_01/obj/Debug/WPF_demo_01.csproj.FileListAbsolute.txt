@@ -1,0 +1,15 @@
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\bin\Debug\WPF_demo_01.exe.config
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\bin\Debug\WPF_demo_01.exe
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\bin\Debug\WPF_demo_01.pdb
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01.csproj.AssemblyReference.cache
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\MainWindow.g.cs
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\App.g.cs
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01_MarkupCompile.cache
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01_MarkupCompile.lref
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\MainWindow.baml
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01.g.resources
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01.Properties.Resources.resources
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01.csproj.GenerateResource.cache
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01.csproj.CoreCompileInputs.cache
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01.exe
+D:\C_sharp\WPF_Hoc\WPF_demo_01\WPF_demo_01\obj\Debug\WPF_demo_01.pdb
