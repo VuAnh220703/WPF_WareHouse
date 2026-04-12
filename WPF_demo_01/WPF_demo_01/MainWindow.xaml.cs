@@ -30,12 +30,12 @@ namespace WPF_demo_01
         // function bắt sự kiện Got focus điền thông tin
         private void fncTxt_GotFocus(object sender, RoutedEventArgs e)
         {
-          if(sender.GetType().Name.ToString() == "PasswordBox")
+            if (sender.GetType().Name.ToString() == "PasswordBox")
             {
                 PasswordBox password = sender as PasswordBox;
                 password.Clear();
             }
-          else if (sender.GetType().Name.ToString() == "TextBox")
+            else if (sender.GetType().Name.ToString() == "TextBox")
             {
                 TextBox tbIdUser = sender as TextBox;
                 tbIdUser.Clear();
@@ -62,7 +62,7 @@ namespace WPF_demo_01
                 return (SolidColorBrush)(new BrushConverter().ConvertFrom("#727782"));
             }
             return (SolidColorBrush)(new BrushConverter().ConvertFrom("#171C1F"));
-            
+
         }
 
         // function bắt sự kiện di chuyển chuột
@@ -70,16 +70,16 @@ namespace WPF_demo_01
         {
             Button btn = sender as Button;
             Border bdBtn = new Border();
-            if(btn.Name == "btnLogin")
+            if (btn.Name == "btnLogin")
             {
-                 bdBtn = (Border)btnLogin.Template.FindName("bdBtnLogin", btnLogin);
+                bdBtn = (Border)btnLogin.Template.FindName("bdBtnLogin", btnLogin);
             }
             else if (btn.Name == "btnCodeQR")
             {
                 bdBtn = (Border)btnCodeQR.Template.FindName("bdCodeQR", btnCodeQR);
-               
+
             }
-             bdBtn.Background = Brushes.LightBlue;
+            bdBtn.Background = Brushes.LightBlue;
         }
 
         // function bắt sự kiện di chuyển chuột ra khỏi nút button
@@ -87,9 +87,9 @@ namespace WPF_demo_01
         {
             Button btn = sender as Button;
             Border borderBtn = new Border();
-            if(btn.Name == "btnLogin")
+            if (btn.Name == "btnLogin")
             {
-                 borderBtn = (Border)btnLogin.Template.FindName("bdBtnLogin", btnLogin);
+                borderBtn = (Border)btnLogin.Template.FindName("bdBtnLogin", btnLogin);
                 borderBtn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#004277"));
             }
             else if (btn.Name == "btnCodeQR")

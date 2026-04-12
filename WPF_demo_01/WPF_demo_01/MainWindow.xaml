@@ -3,55 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF_demo_01"
+        xmlns:views="clr-namespace:WPF_demo_01.Views"
         mc:Ignorable="d"
-        WindowStyle="SingleBorderWindow"
+         WindowStyle="SingleBorderWindow"
        Height="600"
         Width="900"
         Title="Phần mềm quản lý kho -- Đăng nhập USER"
-        Background="#0B64AD"
-        >
-    <!-- grid tổng  -->
-
-    <Grid
-        Margin="80,45"
+        Background="#0B64AD">
+	<Grid
+	   Margin="80,45"
         
         >
-        <Grid.Effect>
-            <DropShadowEffect 
+		<Grid.Effect>
+			<DropShadowEffect
             Color="Black"
             BlurRadius="20"
             ShadowDepth="5"
             Opacity="5"/>
-        </Grid.Effect>
-        <!-- phân chia cột-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+		</Grid.Effect>
+		<!-- phân chia cột-->
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition></ColumnDefinition>
+			<ColumnDefinition></ColumnDefinition>
+		</Grid.ColumnDefinitions>
 
-        <!-- phần giới thiệu-->
-        <Grid 
+		<!-- phần giới thiệu-->
+		<Grid
             Background="#004277"
             Grid.Column="0"
             >
 
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
 
-            <!--Phần trên-->
-            <Grid Grid.Row="0" Margin="20,10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
+			<!--Phần trên-->
+			<Grid Grid.Row="0" Margin="20,10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+				</Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" >
-                    <Image Source="/Icons/icon_background.png" Height="40" Width="40" />
-                    <TextBlock 
+				<StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" >
+					<Image Source="/Icons/icon_background.png" Height="40" Width="40" />
+					<TextBlock
                     Text="Phần mềm quản lý kho"
                     VerticalAlignment="Center"
                     FontSize="20"
@@ -59,9 +56,9 @@
                     Padding="10"
                     Foreground="White"
                     />
-                </StackPanel>
+				</StackPanel>
 
-                <TextBlock  
+				<TextBlock
                 Grid.Row="1"
                 Text="Precision logistics, reimagined."
                 FontSize="20"
@@ -69,44 +66,44 @@
                 Foreground="#A2C9FF"
                     
                 />
-                <TextBlock
+				<TextBlock
                 Grid.Row="2"
                 LineStackingStrategy="MaxHeight"
                 LineHeight="3"
-                TextWrapping="Wrap"                
+                TextWrapping="Wrap"
                 Text="Phần mềm quản lý kho được phát triển bởi công ty XYZ, quản lý nhân viên, sản phẩm có trong kho. Có thể tính tiền xuất hoá đơn một cách nhanh chống và hiện đại. "
                     FontWeight="Light"
                     Foreground="White"
                     FontSize="14"
                 />
-            </Grid>
+			</Grid>
 
 
-            <!-- phần dưới-->
-            <Border 
-                Grid.Row="1" 
-                VerticalAlignment="Bottom" 
-                BorderThickness="1" 
-                BorderBrush="White" 
-                Margin="20,10" 
+			<!-- phần dưới-->
+			<Border
+                Grid.Row="1"
+                VerticalAlignment="Bottom"
+                BorderThickness="1"
+                BorderBrush="White"
+                Margin="20,10"
                 Height="Auto"
                 Padding="10"
                 CornerRadius="10"
                 >
 
-                <StackPanel Orientation="Vertical">
-                    <StackPanel  
-                    Height="30" 
+				<StackPanel Orientation="Vertical">
+					<StackPanel
+                    Height="30"
                     VerticalAlignment="Top"
                     Orientation="Horizontal"
                     >
-                        <Image
-                        Source="/Icons/icon_container.png" 
+						<Image
+                        Source="/Icons/icon_container.png"
                         Height="20"
                         Width="20"
                         />
 
-                        <TextBlock 
+						<TextBlock
                         Text="SYSTEM STATUS"
                         FontSize="12"
                         FontWeight="Bold"
@@ -115,17 +112,17 @@
                        Foreground="White"
                         />
 
-                    </StackPanel>
+					</StackPanel>
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="auto"/>
+						</Grid.ColumnDefinitions>
 
-                        <TextBlock
-                            Grid.Column="0"                        
+						<TextBlock
+                            Grid.Column="0"
                             FontSize="12"
                             FontStyle="Italic"
                             FontWeight="ExtraLight"
@@ -133,7 +130,7 @@
                             Text="Warehouse Node Alpha"
                             
                             />
-                        <TextBlock
+						<TextBlock
                             Grid.Column="2"
                             FontSize="12"
                             FontWeight="DemiBold"
@@ -141,41 +138,41 @@
                             Text="Connection"
                             
                             />
-                    </Grid>
-                </StackPanel>
-            </Border>
-        </Grid>
+					</Grid>
+				</StackPanel>
+			</Border>
+		</Grid>
 
 
-        <!-- phần điền thông tin đăng nhập -->
-        <Grid
+		<!-- phần điền thông tin đăng nhập -->
+		<Grid
             Background="White"
             Grid.Column="1"
             >
-            <StackPanel 
+			<StackPanel
                 Orientation="Vertical"
                Margin="20"
                 >
-                <TextBlock
+				<TextBlock
                     Text="Đăng nhập -- Chạy phần mềm"
                     FontSize="20"
                     FontWeight="Bold"
                     />
 
-                <TextBlock
+				<TextBlock
                     Text="Dùng thông tin nội bộ cung cấp để mở phần mềm"
                     Margin="0,10,0,30"
                     FontStyle="Italic"
                     FontWeight="ExtraLight"
                     />
 
-                <!--Điền id user-->
-                <StackPanel
+				<!--Điền id user-->
+				<StackPanel
                     Orientation="Vertical"
                     >
 
-                    <!--lable điền id nhân viên-->
-                    <TextBlock
+					<!--lable điền id nhân viên-->
+					<TextBlock
                         Text="ID Nhân viên"
                         FontSize="12"
                         FontWeight="Bold"
@@ -183,22 +180,22 @@
                         />
 
 
-                    <!--Nhập id nhân viên-->
-                    <Border 
+					<!--Nhập id nhân viên-->
+					<Border
                         BorderThickness="0"
                         Height="40"
                         Background="#F0F4F8"
                         CornerRadius="5"
                         >
 
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2.8"/>
-                                <ColumnDefinition Width="17.2"/>
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="/Icons/icon_iduser.png" Height="20" Width="20" Grid.ColumnSpan="2" Margin="0,10"/>
-                            <TextBox 
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="2.8"/>
+								<ColumnDefinition Width="17.2"/>
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+							<Image Grid.Column="0" Source="/Icons/icon_iduser.png" Height="20" Width="20" Grid.ColumnSpan="2" Margin="0,10"/>
+							<TextBox
                                 Grid.Column="2"
                                 Name="txtIdUser"
                                 Text="000-NV-000"
@@ -212,30 +209,30 @@
                                GotFocus="fncTxt_GotFocus"
                                 LostFocus="txtIdUser_LostFocus" Margin="0,7,-0.6,6"
                                 />
-                        </Grid>
+						</Grid>
 
-                    </Border>
-                </StackPanel>
+					</Border>
+				</StackPanel>
 
-                <!-- Điền mật khẩu nhân viên-->
-                <StackPanel Orientation="Vertical" Margin="0,15">
+				<!-- Điền mật khẩu nhân viên-->
+				<StackPanel Orientation="Vertical" Margin="0,15">
 
-                    <!-- lable điền mật khẩu và quên mật khẩu-->
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="auto"/>
-                        </Grid.ColumnDefinitions>
+					<!-- lable điền mật khẩu và quên mật khẩu-->
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="auto"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="auto"/>
+						</Grid.ColumnDefinitions>
 
-                        <TextBlock 
+						<TextBlock
                             Grid.Column="0"
                             Text="Mật khẩu"
                             FontWeight="Bold"
                             FontSize="12"
                             Foreground="#414750"
                             />
-                        <TextBlock 
+						<TextBlock
                             Grid.Column="2"
                             Text="Quên mật khẩu"
                             Foreground="#004277"
@@ -244,25 +241,25 @@
                             FontStyle="Italic"
                             
                             />
-                    </Grid>
+					</Grid>
 
-                    <!-- nhập mật khẩu-->
-                    <Border 
+					<!-- nhập mật khẩu-->
+					<Border
                         BorderThickness="0"
                         Height="40"
                         Background="#F0F4F8"
                         CornerRadius="5"
                         >
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="auto"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
 
-                            <!--icon mật khẩu-->
-                            <Image Grid.Column="0" Source="/Icons/icon_password.png" Height="20" Width="20"/>
-                            <!--nhập password-->
-                            <PasswordBox 
+							<!--icon mật khẩu-->
+							<Image Grid.Column="0" Source="/Icons/icon_password.png" Height="20" Width="20"/>
+							<!--nhập password-->
+							<PasswordBox
                                 Grid.Column="1"
                                 x:Name="txtPassword"
                                 VerticalAlignment="Center"
@@ -273,28 +270,28 @@
                                 Background="#F0F4F8"
                                 GotFocus="fncTxt_GotFocus"
                                 />
-                        </Grid>
+						</Grid>
 
-                    </Border>
-                </StackPanel>
+					</Border>
+				</StackPanel>
 
-                <!-- Button đăng nhập-->
-                <Button x:Name="btnLogin" Height="45" Content="Đăng nhập" FontWeight="Bold" FontSize="16" Foreground="white" MouseEnter="fncButton_MouseEnter" MouseLeave="fncButton_MouseLeave">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border x:Name="bdBtnLogin" CornerRadius="8" Background="#004277">
-                                <ContentPresenter
+				<!-- Button đăng nhập-->
+				<Button x:Name="btnLogin" Height="45" Content="Đăng nhập" FontWeight="Bold" FontSize="16" Foreground="white" MouseEnter="fncButton_MouseEnter" MouseLeave="fncButton_MouseLeave">
+					<Button.Template>
+						<ControlTemplate TargetType="Button">
+							<Border x:Name="bdBtnLogin" CornerRadius="8" Background="#004277">
+								<ContentPresenter
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                 
                                     />
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+							</Border>
+						</ControlTemplate>
+					</Button.Template>
+				</Button>
 
-                <!-- lable đăng nhập bằng mã QR-->
-                <TextBlock 
+				<!-- lable đăng nhập bằng mã QR-->
+				<TextBlock
                     Text="OR AUTHENTICATE WITH"
                    HorizontalAlignment="Center"
                     Foreground="#727782"
@@ -302,32 +299,32 @@
                     Margin="0,10"
                     />
 
-                <!--Đăng nhập bằng mã QR-->
-                <Button x:Name="btnCodeQR" Height="45" MouseEnter="fncButton_MouseEnter" MouseLeave="fncButton_MouseLeave">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border x:Name="bdCodeQR" Background="#F0F4F8" CornerRadius="8">
-                                <ContentPresenter
+				<!--Đăng nhập bằng mã QR-->
+				<Button x:Name="btnCodeQR" Height="45" MouseEnter="fncButton_MouseEnter" MouseLeave="fncButton_MouseLeave">
+					<Button.Template>
+						<ControlTemplate TargetType="Button">
+							<Border x:Name="bdCodeQR" Background="#F0F4F8" CornerRadius="8">
+								<ContentPresenter
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     />
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="/Icons/icon_codeQR.png" Height="20" Width="20" />
-                        <TextBlock 
+							</Border>
+						</ControlTemplate>
+					</Button.Template>
+					<StackPanel Orientation="Horizontal">
+						<Image Source="/Icons/icon_codeQR.png" Height="20" Width="20" />
+						<TextBlock
                             Text="Quét mã QR nhân viên"
                             VerticalAlignment="Center"
                             Padding="10,0"
                             FontWeight="Bold"
                             />
-                    </StackPanel>
-                </Button>
+					</StackPanel>
+				</Button>
 
 
-            </StackPanel>
+			</StackPanel>
 
-        </Grid>
-    </Grid>
+		</Grid>
+	</Grid>
 </Window>

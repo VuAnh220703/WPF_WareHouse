@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-D:\C_sharp\WPF_WareHouse\WPF_demo_01\WPF_demo_01\obj\Debug\
+D:\C_sharp\WPF_WareHouse\WPF_demo_01\WPF_demo_01\obj\Release\
 WPF_demo_01
 none
 false
-DEBUG;TRACE
+TRACE
 D:\C_sharp\WPF_WareHouse\WPF_demo_01\WPF_demo_01\App.xaml
 22085558118
 
@@ -16,5 +16,5 @@ D:\C_sharp\WPF_WareHouse\WPF_demo_01\WPF_demo_01\App.xaml
 13-1505183044
 MainWindow.xaml;Views\UserControl1.xaml;
 
-False
+True
 
