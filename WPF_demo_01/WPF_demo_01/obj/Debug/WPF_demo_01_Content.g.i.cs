@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/container%20(1).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/icon_filter.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icons/icon_sort.png")]
 
 

@@ -1,0 +1,42 @@
+﻿<Window x:Class="WPF_demo_01.Views.HomeWindow_QL"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_demo_01.Views"
+        mc:Ignorable="d"
+        Title="Trang chủ" 
+        WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="8*" />
+        </Grid.ColumnDefinitions>
+        
+        <!--phần menu quản lý-->
+        <Border Background="#F1F5F9" CornerRadius="0,20,20,0">
+            <StackPanel Margin="10">
+                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="13">Chi nhánh demo</TextBlock>
+                <TextBlock FontWeight="Light" FontStyle="Italic" FontSize="8" HorizontalAlignment="Center">Máy 01 - đang hoạt động</TextBlock>
+
+                <!-- Nút bấm điều hướng -->
+                <Button Content="Bán hàng" Click="btnTrangChu_Click" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="BanHang" Tag="BanHang"/>
+                <Button Content="Hàng tồn kho" Click="btnBanHangClick" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="HangTonKho" Tag="HangTonKho"/>
+                <Button Content="Tìm kiếm kho" Click="btnKhoClick" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="TimKiemKho" Tag="TimKiemKho"/>
+                <Button Content="Báo cáo" Click="btnTrangChu_Click" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="BaoCao" Tag="BaoCao"/>
+                <Button Content="Vẫn chuyển" Click="btnBanHangClick" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="VanChuyen" Tag="VanChuyen"/>
+                <Button Content="Duyệt date" Click="btnKhoClick" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="DuyetDate" Tag="DuyetDate"/>
+                <Button Content="Duyệt nhập hàng" Click="btnTrangChu_Click" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="DuyetNhapHang" Tag="DuyetNhapHang"/>
+                <Button Content="Duyệt xuất nhập hàng" Click="btnBanHangClick" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="DuyetXuatHang" Tag="DuyetXuatHang"/>
+                <Button Content="Quản lý nhân viên" Click="btnKhoClick" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="QuanLyNhanVien" Tag="QuanLyNhanVien"/>
+                <Button Content="Xuất hoá đơn đỏ" Click="btnTrangChu_Click" Style="{StaticResource MenuButtonStyle_Quanly}" Command="{Binding ChangeMenuCommand}" CommandParameter="XuatHoaDonDo" Tag="XuatHoaDonDo"/>
+                
+            </StackPanel>
+        </Border>
+
+        <!--phần nội dung-->
+        <Grid Grid.Column="1">
+            
+        </Grid>
+    </Grid>
+</Window>

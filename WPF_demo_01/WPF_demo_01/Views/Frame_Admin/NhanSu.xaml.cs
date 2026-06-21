@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPF_demo_01.Views
+namespace WPF_demo_01.Views.Frame_Admin
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for NhanSu.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class NhanSu : UserControl
     {
-        public UserControl1()
+        public NhanSu()
         {
             InitializeComponent();
         }

@@ -1,0 +1,185 @@
+﻿<UserControl x:Class="WPF_demo_01.Views.Frame_Admin.DanhMucSanPham"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_demo_01.Views.Frame_Admin" xmlns:viewmodels="clr-namespace:WPF_demo_01.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:AdViewmodel_DanhMucSanPham}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+    </UserControl.Resources>
+    
+
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="7*"/>
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0" Margin="10,0">
+                        <StackPanel>
+                            <TextBlock FontSize="40" FontWeight="Bold">Quản lý danh mục</TextBlock>
+                            <TextBlock Padding="10,0" FontStyle="Italic">Hệ thống phân loại sản phẩm và điều phối nhà cung cấp</TextBlock>
+                        </StackPanel>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <Button Width="200" Command="{Binding ShowAddOverlayCommand}" Height="40" VerticalAlignment="Bottom" Background="#004277" Foreground="White" Margin="5,0" Cursor="Hand">
+                            <StackPanel Orientation="Horizontal" Margin="5,0">
+                                <Image Source="/Icons/icon_add.png" Width="18" Height="18" Margin="0,0,5,0"/>
+                                <TextBlock Text="Thêm danh mục mới" VerticalAlignment="Center" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1" Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="7*" />
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--header (search, fillter, sort) -->
+                    <Grid Grid.Row="0" Margin="10,0">
+                        <StackPanel Orientation="Vertical">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Padding="20,0" Width="500" Background="#F3F3FD" CornerRadius="10" BorderThickness="1">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image VerticalAlignment="Center" Height="20" Width="20"  Source="/Icons/icon_search.png"/>
+                                        <TextBox Padding="10,0" Width="450" FontWeight="Thin"  FontSize="14" FontStyle="Italic" Text="Nhập tên danh mục hoặc ID..."/>
+                                    </StackPanel>
+                                </Border>
+
+
+                                <Button Margin="10,0" Background="#F3F3FD">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Height="20" Width="20" Source="/Icons/icon_filter.png" />
+                                        <TextBlock Padding="10,0" Text="Filter" FontWeight="Bold" />
+                                    </StackPanel>
+                                </Button>
+
+
+                                <!--button sort-->
+                                <Button Background="#F3F3FD">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Height="20" Width="20" Source="/Icons/icon_sort.png" />
+                                        <TextBlock Padding="10,0" Text="Sort" FontWeight="Bold" />
+                                    </StackPanel>
+                                </Button>
+
+                            </StackPanel>
+
+                            <ListBox ItemsSource="{Binding ListCategories}" 
+                 HorizontalContentAlignment="Stretch"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 Background="Transparent" BorderThickness="0" Margin="0,10,0,0">
+
+                                <!-- 1. Định nghĩa cách sắp xếp: Các Card tự động tràn hàng -->
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Margin="10"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+
+                                <!-- 2. Thiết kế giao diện cho từng Card -->
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Width="200" Height="120" Background="White" 
+                            CornerRadius="8" Margin="10" Padding="15">
+                                            <!-- Hiệu ứng đổ bóng cho Card -->
+                                            <Border.Effect>
+                                                <DropShadowEffect BlurRadius="10" ShadowDepth="2" Opacity="0.1"/>
+                                               
+                                            </Border.Effect>
+                                            <Border.InputBindings>
+                                                <MouseBinding MouseAction="LeftClick"
+                                                              Command="{Binding DataContext.SelectItemCommand,RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                              CommandParameter="{Binding}"
+                                                              />
+                                            </Border.InputBindings>
+
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <!-- Tên -->
+                                                    <RowDefinition Height="*"/>
+                                                    <!-- Mô tả -->
+                                                    <RowDefinition Height="Auto"/>
+                                                    <!-- Nút bấm -->
+                                                </Grid.RowDefinitions>
+
+                                                <TextBlock Grid.Row="0" Text="{Binding Name}" 
+                                       FontWeight="Bold" FontSize="16" Foreground="#333"/>
+
+                                                <TextBlock Grid.Row="1" Text="{Binding Description}" 
+                                       Foreground="Gray" TextWrapping="Wrap" 
+                                       FontSize="12" Margin="0,5,0,0"/>
+
+                                                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                                                    <Button Content="Sửa"/>
+
+                                                    <Button Content="Xóa" Foreground="Red" Margin="10,0,0,0" 
+            Command="{Binding DataContext.DeleteItemCategory, RelativeSource={RelativeSource AncestorType=ListBox}}"
+            CommandParameter="{Binding}" />
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+
+                                <!-- 3. Tùy chỉnh để khi chọn (Hover) Card không bị xanh lè xấu xí -->
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="ListBoxItem">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="ListBoxItem">
+                                                    <ContentPresenter />
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                            </ListBox>
+                        </StackPanel>
+                      
+
+                     
+                    </Grid>
+
+                    <!--content-->
+                    <Grid Grid.Row="1" >
+
+                    </Grid>
+
+                    <!--footer-->
+                    <Grid Grid.Row="2" >
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </DockPanel>
+
+        <!-- LỚP TRÊN: LỚP PHỦ MỜ VÀ USERCONTROL THÊM MỚI -->
+        <Grid  Visibility="{Binding IsAddOverlayVisible, Converter={StaticResource BoolToVis}}"
+              Background="#60000000">
+            <local:Add_DanhMuc_constrol DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+
+        </Grid>
+        <Grid  Visibility="{Binding IsDetailVisible, Converter={StaticResource BoolToVis}}"
+              Background="#60000000">
+            <local:Detail_DanhMuc_Kho_constrol DataContext="{Binding DataContext, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+
+        </Grid>
+    </Grid>
+</UserControl>

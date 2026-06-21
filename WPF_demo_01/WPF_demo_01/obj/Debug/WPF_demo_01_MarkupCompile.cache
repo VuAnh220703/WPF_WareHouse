@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\C_sharp\WPF_WareHouse\WPF_demo_01\WPF_demo_01\App.xaml
-22085558118
+12236078211
 
-7373862126
-13-1505183044
-MainWindow.xaml;Views\UserControl1.xaml;
+36-431222627
+51-218964097
+MainWindow.xaml;Views\Frame_Admin\Add_DanhMuc_constrol.xaml;Views\Frame_Admin\Add_Supplier_dialog.xaml;Views\Frame_Admin\DanhMucSanPham.xaml;Views\Frame_Admin\Detail_DanhMuc_Kho_constrol.xaml;Views\Frame_Admin\KhoiTaoSP.xaml;Views\Frame_Admin\NhaCungCap.xaml;Views\Frame_Admin\NhanSu.xaml;Views\Frame_Admin\NhapHang.xaml;Views\Frame_Admin\PhanPhoiSP.xaml;Views\HomeWindow_AD.xaml;Views\HomeWindow_QL.xaml;
 
 False
 

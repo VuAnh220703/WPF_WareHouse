@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="WPF_demo_01.Views.Frame_Admin.Add_DanhMuc_constrol"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_demo_01.Views.Frame_Admin" xmlns:viewmodels="clr-namespace:WPF_demo_01.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:AdViewmodel_DanhMucSanPham}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="White" CornerRadius="10" Padding="20" Width="350"
+            BorderBrush="#1E90FF" BorderThickness="1" VerticalAlignment="Center">
+        <StackPanel>
+            <TextBlock Text="THÊM DANH MỤC MỚI" FontSize="16" FontWeight="Bold" Margin="0,0,0,15"/>
+
+            <!--tên danh mục cần thêm vào -->
+            <StackPanel Orientation="Vertical" Margin="0,10">
+                <TextBlock Text="Tên danh mục:"/>
+                <Border CornerRadius="5" BorderThickness="1" BorderBrush="gray" Padding="5,5">
+                    <TextBox Text="{Binding NewCategoryName, UpdateSourceTrigger=PropertyChanged}" Margin="0,5"/>
+                </Border>
+                <TextBlock Text="{Binding ErrInputCategoryName,UpdateSourceTrigger=PropertyChanged}" FontWeight="Light" FontStyle="Italic" Foreground="red" />
+            </StackPanel>
+
+            <!-- mô tả danh mục sản phẩm-->
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Mô tả:"/>
+                <Border CornerRadius="5" BorderThickness="1" BorderBrush="gray" Padding="5,5">
+                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding NewCategoryDesc}" Height="80" Margin="0,5"/>
+                </Border>
+                <TextBlock Text="{Binding ErrInputCategoryDesc}" FontWeight="Light" FontStyle="Italic" Foreground="red"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,5">
+                <Button Content="Hủy" Command="{Binding HideAddOverlayCommand}" Width="70" Margin="0,0,10,0"/>
+                <Button Content="Lưu" Command="{Binding SaveNewCategory}" Width="70" Background="#1E90FF" Foreground="White"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

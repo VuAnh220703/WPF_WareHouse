@@ -1,0 +1,275 @@
+﻿<Window x:Class="WPF_demo_01.Views.HomeWindow_AD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_demo_01.Views" 
+        xmlns:vm="clr-namespace:WPF_demo_01.ViewModels"
+        xmlns:viewmodels="clr-namespace:WPF_demo_01.ViewModels" 
+        xmlns:views="clr-namespace:WPF_demo_01.Views.Frame_Admin" d:DataContext="{d:DesignInstance Type=vm:HomeViewModel_Admin}"
+        mc:Ignorable="d"
+        Title="Trang chủ ứng dụng --- người dùng Admin"
+        WindowState="Maximized"
+        ResizeMode="CanMinimize"
+        >
+    <Window.Resources>
+        <!--giao diện KhoiTaoSP -->
+        <DataTemplate DataType="{x:Type vm:AdViewmodel_KhoiTaoSP}">
+            <views:KhoiTaoSP />
+        </DataTemplate>
+
+        <!-- Nhập hàng  -->
+        <DataTemplate DataType="{x:Type vm:AdViewModel_NhapHang}">
+            <views:NhapHang />
+        </DataTemplate>
+
+        <!-- Nhà cung cấp  -->
+        <DataTemplate DataType="{x:Type vm:AdViewmodel_NhaCungCap}">
+            <views:NhaCungCap />
+        </DataTemplate>
+
+        <!-- phân phối sản phẩm  -->
+        <DataTemplate DataType="{x:Type vm:AdViewmodel_PhanPhoiSP}">
+            <views:PhanPhoiSP />
+        </DataTemplate>
+
+        <!-- phân danh mục  -->
+        <DataTemplate DataType="{x:Type vm:AdViewmodel_DanhMucSanPham}">
+            <views:DanhMucSanPham />
+        </DataTemplate>
+
+        <!-- nhân sự -->
+        <DataTemplate DataType="{x:Type vm:AdViewmodel_NhanSu}">
+            <views:NhanSu />
+        </DataTemplate>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="8*" />
+        </Grid.ColumnDefinitions>
+
+        <!--phần menu quản lý-->
+        <Border Background="#F1F5F9" CornerRadius="0,20,20,0">
+            <StackPanel Margin="10">
+                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" FontSize="18" Foreground="#005A9E">Quản lý cửa hàng</TextBlock>
+                <TextBlock FontWeight="Medium" FontStyle="Italic" FontSize="8" HorizontalAlignment="Center" Foreground="#171C1F">Hệ thống Admin</TextBlock>
+
+                <!-- Nút bấm điều hướng -->
+                <Button
+            HorizontalContentAlignment="Left"
+                    Style="{StaticResource MenuButtonStyle_Admin}" Command="{Binding ChangeMenuCommand}"
+                    CommandParameter="KhoiTaoSP"
+                    Tag="KhoiTaoSP"
+                    >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <!-- cố định icon -->
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Icons/icon_addPD.png"
+                   Width="18"
+                   Height="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                       Text="Khởi tạo sản phẩm"
+                       VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+
+                <!--Button danh mục sản phẩm-->
+                <Button 
+            HorizontalContentAlignment="Left"  
+                      Style="{StaticResource MenuButtonStyle_Admin}" Command="{Binding ChangeMenuCommand}"
+                    CommandParameter="DanhMucSP"
+                    Tag="DanhMucSP"
+                        >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Icons/icon_phanloai.png"
+                   Width="18"
+                   Height="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                       Text="Phân loại"
+                       VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+
+                <!--Button Nhà cung cấp-->
+                <Button 
+            HorizontalContentAlignment="Left"  
+                      Style="{StaticResource MenuButtonStyle_Admin}" Command="{Binding ChangeMenuCommand}"
+                    CommandParameter="NhaCungCap"
+                    Tag="NhaCungCap"
+                        >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Icons/icon_factory.png"
+                   Width="18"
+                   Height="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                       Text="Nhà cung cấp"
+                       VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+
+                <!--Button nhập hàng-->
+                <Button 
+            HorizontalContentAlignment="Left"  
+                      Style="{StaticResource MenuButtonStyle_Admin}" Command="{Binding ChangeMenuCommand}"
+                    CommandParameter="NhapHang"
+                    Tag="NhapHang"
+                        >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Icons/icon_nhaphang.png"
+                   Width="18"
+                   Height="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                       Text="Nhập hàng"
+                       VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+
+                <!--button phân phối sản phẩm-->
+                <Button 
+                      Style="{StaticResource MenuButtonStyle_Admin}" Command="{Binding ChangeMenuCommand}"
+            HorizontalContentAlignment="Left"  
+                    CommandParameter="PhanPhoiSP"
+                    Tag="PhanPhoiSP"
+                        >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Icons/icon_phanphoisp.png"
+                   Width="18"
+                   Height="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                       Text="Phân phối hàng"
+                       VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+<!--Button nhân sự-->
+                <Button 
+                      Style="{StaticResource MenuButtonStyle_Admin}" Command="{Binding ChangeMenuCommand}"
+            HorizontalContentAlignment="Left"    
+                    CommandParameter="NhanSu"
+                    Tag="NhanSu"
+                        >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Icons/icon_nhansu.png"
+                   Width="18"
+                   Height="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                       Text="Nhân sự"
+                       VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+<!--button báo cáo-->
+                <Button
+                      Style="{StaticResource MenuButtonStyle_Admin}" Command="{Binding ChangeMenuCommand}"
+            HorizontalContentAlignment="Left"
+                    CommandParameter="BaoCao"
+                    Tag="BaoCao"
+                    >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <!-- cố định icon -->
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Icons/icon_baocao.png"
+                   Width="18"
+                   Height="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                       Text="Báo cáo"
+                       VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+
+                <!--Button cài đặt-->
+                <Button
+                      Style="{StaticResource MenuButtonStyle_Admin}" Command="{Binding ChangeMenuCommand}"
+            HorizontalContentAlignment="Left"
+                    CommandParameter="Setting"
+                    Tag="Setting"
+                    >
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <!-- cố định icon -->
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="/Icons/icon_setting.png"
+                   Width="18"
+                   Height="18"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Column="1"
+                       Text="Cài đặt"
+                       VerticalAlignment="Center"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!--phần nội dung-->
+        <Grid Grid.Column="1">
+            <ContentControl Content="{Binding CurrentChildView}" />
+        </Grid>
+    </Grid>
+</Window>
